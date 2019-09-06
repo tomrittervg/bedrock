@@ -233,6 +233,9 @@ DOTLANG_CACHE = 600
 
 DOTLANG_FILES = ['navigation', 'download_button', 'main', 'footer']
 
+FLUENT_DEFAULT_FILES = ['navigation', 'download_button']
+FLUENT_LOCAL_PATH = ROOT_PATH / 'l10n'
+
 # Paths that don't require a locale code in the URL.
 # matches the first url component (e.g. mozilla.org/gameon/)
 SUPPORTED_NONLOCALES = [

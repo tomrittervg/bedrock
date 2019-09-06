@@ -317,4 +317,6 @@ urlpatterns = (
     url(r'^xbl$', views.namespaces, {'namespace': 'xbl'}),
 
     page('locales', 'mozorg/locales.html'),
+
+    page('fluent-test', 'mozorg/fluent.html', ftl_files=['mozorg/fluent']),
 )

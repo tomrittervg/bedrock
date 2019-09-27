@@ -28,9 +28,7 @@ $image-path: '/media/protocol/img';
         padding-right: $spacing-lg;
     }
 }
-.lockwise-logo{
-    margin-bottom: $spacing-md;
-}
+
 .mobile-download-buttons {
     padding-bottom: $spacing-md;
 }
@@ -52,7 +50,10 @@ $image-path: '/media/protocol/img';
 .mzp-c-hero-image {
     padding-top: $spacing-lg;
 }
-
+.mzp-c-hero-title {
+    background: url('/media/img/firefox/lockwise/lockwise-horizontal.svg') no-repeat;
+    padding-top: $layout-xl;
+}
 
 @media #{$mq-sm} {
     .mobile-download-buttons {

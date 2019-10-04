@@ -1,3 +1,7 @@
+{# This Source Code Form is subject to the terms of the Mozilla Public
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
+
 {% add_lang_files "firefox/products/lockwise" %}
 
 {% from "macros.html" import google_play_button with context %}
@@ -20,19 +24,18 @@
 
 {% block content %}
   <main role="main">
-  <!-- <img src="{{ static('img/firefox/lockwise/lockwise-horizontal.svg') }}" class="lockwise-logo" /> -->
     {% if LANG.startswith('en-') %}
-      {% set _img = 'firefox/lockwise/en.svg'%}
+      {% set _img = 'firefox/lockwise/en.png'%}
     {% elif LANG == 'de' %}
-      {% set _img = 'firefox/lockwise/de.svg'%}
+      {% set _img = 'firefox/lockwise/de.png'%}
     {% elif LANG == 'fr' %}
-      {% set _img = 'firefox/lockwise/fr.svg'%}
+      {% set _img = 'firefox/lockwise/fr.png'%}
     {% elif LANG == 'it' %}
-      {% set _img = 'firefox/lockwise/it.svg'%}
+      {% set _img = 'firefox/lockwise/it.png'%}
     {% elif LANG.startswith('es-') %}
-      {% set _img = 'firefox/lockwise/es.svg'%}
+      {% set _img = 'firefox/lockwise/es.png'%}
     {% else %}
-      {% set _img = 'firefox/lockwise/en.svg'%}
+      {% set _img = 'firefox/lockwise/en.png'%}
     {% endif %}
 
     {% call hero(
@@ -51,26 +54,26 @@
       </div>
       <div class="mzp-c-hero-cta add-on-download for-firefox-69-and-below" >
         <div class="mzp-c-button-download-container">
-          <p >{{ _('Try Lockwise now') }}</p>
+          <p>{{ _('Try Lockwise now') }}</p>
           <a href="https://github.com/mozilla-lockwise/lockwise-addon/releases/download/2.2.5-alpha/lockwise-signed.xpi" class="mzp-c-button mzp-t-product" data-cta-type="Lockwise-Install" data-cta-position="Primary">{{ _('Install for Firefox') }}</a>
         </div>
       </div>
       <div class="mzp-c-hero-cta add-on-download for-firefox-70-and-above" >
         <div class="mzp-c-button-download-container">
           <p >{{ _('Try Lockwise now') }}</p>
-          <a class="mzp-c-button mzp-t-product" id="lockwise-button" data-cta-type="Lockwise-Open" data-cta-position="Primary">{{ _('Open in Firefox') }} </a>
+          <button class="mzp-c-button mzp-t-product" id="lockwise-button" data-cta-type="Lockwise-Open" data-cta-position="Primary">{{ _('Open in Firefox') }} </button>
         </div>
       </div>
       <div class="mzp-c-hero-cta add-on-download for-non-firefox-users" >
         <div class="mzp-c-button-download-container">
-          <p >{{ _('Only in the Firefox browser') }}</p>
-          <a href="{{ url('firefox.download.thanks') }}" class="mzp-c-button mzp-t-product" data-cta-type="Lockwise-DownloadFX" data-cta-position="Primary">{{ _('Get Firefox') }}</a>
+          <p >{{ _('Only in the Firefox Browser') }}</p>
+          {{ download_firefox(alt_copy=_('Download now'), download_location='primary cta') }}
         </div>
       </div>
 
     {% endcall %}
 
-    <section class="dark-content">
+    <div class="mzp-t-dark">
       <section class="mzp-l-card-third mzp-l-content">
         <section class="mzp-c-card-picto ">
           <div class="mzp-c-card-picto-content encryption">
@@ -84,18 +87,18 @@
         </section>
         <section class="mzp-c-card-picto">
           <div class="mzp-c-card-picto-content privacy">
-            <p class="picto-content"><span>{{ _('Your privacy comes first. ')}}</span><span>{{ _('We keep your data safe, never sold.') }}</span></p>
+            <p class="picto-content"><span>{{ _('Your privacy comes first.')}}</span> <span>{{ _('We keep your data safe, never sold.') }}</span></p>
           </div>
         </section>
       </section>
       <section class="mzp-l-content">
         <section class="links">
           <a href='https://support.mozilla.org/products/firefox-lockwise?utm_source=www.mozilla.org-lockwise&amp;utm_campaign=Lockwise&amp;utm_medium=referral' >{{ _('Support') }}</a>
-          <a href='https://lockwise.firefox.com/privacy.html'>{{ _('Your Privacy') }}</a>
+          <a href='https://support.mozilla.org/en-US/kb/firefox-lockwise-and-privacy'>{{ _('Your Privacy') }}</a>
           <a href='https://github.com/mozilla-lockwise'>{{ _('GitHub') }}</a>
         </section>
       </section>
-    </section>
+    </div>
   </main>
 {% endblock %}
 

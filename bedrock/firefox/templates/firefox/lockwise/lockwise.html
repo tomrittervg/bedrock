@@ -47,21 +47,21 @@
     ) %}
 
       <div class="mobile-download-buttons">
-        <a href="{{ lockwise_adjust_url('ios', 'lockwise-page') }}" data-link-type="download" data-download-os="iOS" class="ios-button"  data-cta-text="AppleAppStore" data-cta-type="Lockwise-AppStore" data-cta-position="Primary">
+        <a href="{{ lockwise_adjust_url('ios', 'lockwise-page') }}" data-link-type="download" data-download-os="iOS" class="ios-button"  data-cta-text="apple-app-store" data-cta-type="lockwise-app-store" data-cta-position="primary">
           <img src="{{ l10n_img('firefox/ios/btn-app-store.svg') }}" alt="{{ _('Download on the App Store') }}" width="152" height="45">
         </a>
-        {{ google_play_button(href=lockwise_adjust_url('android', 'lockwise-page'), extra_data_attributes={'download-location': button_location, 'cta-type': 'Lockwise-AppStore', 'cta-text': 'GooglePlayStore', 'cta-position': 'Primary' } ) }}
+        {{ google_play_button(href=lockwise_adjust_url('android', 'lockwise-page'), extra_data_attributes={'download-location': button_location, 'cta-type': 'lockwise-app-store', 'cta-text': 'google-play-store', 'cta-position': 'primary' } ) }}
       </div>
       <div class="mzp-c-hero-cta add-on-download for-firefox-69-and-below" >
         <div class="mzp-c-button-download-container">
           <p>{{ _('Try Lockwise now') }}</p>
-          <a href="https://github.com/mozilla-lockwise/lockwise-addon/releases/download/2.2.5-alpha/lockwise-signed.xpi" class="mzp-c-button mzp-t-product" data-cta-type="Lockwise-Install" data-cta-position="Primary">{{ _('Install for Firefox') }}</a>
+          <a href="https://github.com/mozilla-lockwise/lockwise-addon/releases/download/2.2.5-alpha/lockwise-signed.xpi" class="mzp-c-button mzp-t-product" data-cta-type="lockwise-install" data-cta-position="primary">{{ _('Install for Firefox') }}</a>
         </div>
       </div>
       <div class="mzp-c-hero-cta add-on-download for-firefox-70-and-above" >
         <div class="mzp-c-button-download-container">
           <p >{{ _('Try Lockwise now') }}</p>
-          <button class="mzp-c-button mzp-t-product" id="lockwise-button" data-cta-type="Lockwise-Open" data-cta-position="Primary">{{ _('Open in Firefox') }} </button>
+          <button class="mzp-c-button mzp-t-product" id="lockwise-button" data-cta-type="lockwise-open-in-fx" data-cta-position="primary">{{ _('Open in Firefox') }} </button>
         </div>
       </div>
       <div class="mzp-c-hero-cta add-on-download for-non-firefox-users" >

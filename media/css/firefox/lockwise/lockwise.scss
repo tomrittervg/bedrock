@@ -32,14 +32,17 @@ $image-path: '/media/protocol/img';
 .mobile-download-buttons {
     padding-bottom: $spacing-md;
 }
-.mzp-c-card-picto .mzp-c-card-picto-content.encryption::before {
+.encryption .mzp-c-card-picto-content::before {
     background: url('/media/img/firefox/lockwise/arrows.svg') no-repeat;
 }
-.mzp-c-card-picto .mzp-c-card-picto-content.touch::before {
+.touch .mzp-c-card-picto-content::before {
     background: url('/media/img/firefox/lockwise/fingerprinters.svg') no-repeat;
 }
 .mzp-c-card-picto .mzp-c-card-picto-content.privacy::before {
     background: url('/media/img/firefox/lockwise/mask.svg') no-repeat;
+}
+.mzp-c-card-picto{
+    list-style: none;
 }
 .mzp-c-hero-desc {
     margin-bottom: $spacing-lg;

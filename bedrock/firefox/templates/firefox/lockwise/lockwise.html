@@ -75,16 +75,8 @@
 
     <div class="mzp-t-dark">
       <section class="mzp-l-card-third mzp-l-content">
-        <section class="mzp-c-card-picto ">
-          <div class="mzp-c-card-picto-content encryption">
-            <p class="picto-content">{{ _('256-bit encryption protects you while syncing') }}</p>
-          </div>
-        </section>
-        <section class="mzp-c-card-picto">
-          <div class="mzp-c-card-picto-content touch">
-            <p class="picto-content">{{ _('Get to your passwords securely with Face or Touch ID') }}</p>
-          </div>
-        </section>
+        {{ picto_card(desc=_('256-bit encryption protects you while syncing'), class='encryption') }}
+        {{ picto_card(desc=_('Get to your passwords securely with Face or Touch ID'), class='touch') }}
         <section class="mzp-c-card-picto">
           <div class="mzp-c-card-picto-content privacy">
             <p class="picto-content"><span>{{ _('Your privacy comes first.')}}</span> <span>{{ _('We keep your data safe, never sold.') }}</span></p>

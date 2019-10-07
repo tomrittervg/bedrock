@@ -37,13 +37,15 @@
     {% else %}
       {% set _img = 'firefox/lockwise/en.png'%}
     {% endif %}
-
     {% call hero(
-      title=_('Take your passwords everywhere'),
+      title='Firefox Lockwise',
+      subheading=_('Take your passwords everywhere'),
       desc=_('Securely access the passwords you’ve saved in Firefox from anywhere — even outside of the browser.'),
-      class='mzp-c-hero mzp-has-image',
+      class='mzp-c-hero mzp-has-image lockwise-hero',
       image_url= _img,
       include_cta=True,
+      heading_level=1,
+      subheading_level=4,
     ) %}
 
       <div class="mobile-download-buttons">
@@ -75,18 +77,14 @@
 
     <div class="mzp-t-dark">
       <section class="mzp-l-card-third mzp-l-content">
-        {{ picto_card(desc=_('256-bit encryption protects you while syncing'), class='encryption') }}
-        {{ picto_card(desc=_('Get to your passwords securely with Face or Touch ID'), class='touch') }}
-        <section class="mzp-c-card-picto">
-          <div class="mzp-c-card-picto-content privacy">
-            <p class="picto-content"><span>{{ _('Your privacy comes first.')}}</span> <span>{{ _('We keep your data safe, never sold.') }}</span></p>
-          </div>
-        </section>
+        {{ picto_card(title=_('256-bit encryption protects you while syncing'), class='encryption') }}
+        {{ picto_card(title=_('Get to your passwords securely with Face or Touch ID'), class='touch') }}
+        {{ picto_card(title=_('Your privacy comes first.') ~ ' ' ~ _('We keep your data safe, never sold.'), class='privacy') }}
       </section>
       <section class="mzp-l-content">
         <section class="links">
           <a href='https://support.mozilla.org/products/firefox-lockwise?utm_source=www.mozilla.org-lockwise&amp;utm_campaign=Lockwise&amp;utm_medium=referral' >{{ _('Support') }}</a>
-          <a href='https://support.mozilla.org/en-US/kb/firefox-lockwise-and-privacy'>{{ _('Your Privacy') }}</a>
+          <a href='https://support.mozilla.org/kb/firefox-lockwise-and-privacy'>{{ _('Your Privacy') }}</a>
           <a href='https://github.com/mozilla-lockwise'>{{ _('GitHub') }}</a>
         </section>
       </section>

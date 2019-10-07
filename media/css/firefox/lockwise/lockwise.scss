@@ -13,15 +13,19 @@ $image-path: '/media/protocol/img';
         margin: $spacing-sm;
     }
 }
+
 .card-header {
     text-align: center;
 }
+
 .mzp-t-dark {
     background-color: $color-off-black;
 }
+
 .ios-button {
     text-decoration: none;
 }
+
 .links {
     text-align: center;
     padding-bottom: $layout-xl;
@@ -29,31 +33,42 @@ $image-path: '/media/protocol/img';
         padding-right: $spacing-lg;
     }
 }
+
 .mobile-download-buttons {
     padding-bottom: $spacing-md;
 }
+
 .encryption .mzp-c-card-picto-content::before {
     background: url('/media/img/firefox/lockwise/arrows.svg') no-repeat;
 }
+
 .touch .mzp-c-card-picto-content::before {
     background: url('/media/img/firefox/lockwise/fingerprinters.svg') no-repeat;
 }
-.mzp-c-card-picto .mzp-c-card-picto-content.privacy::before {
+
+.privacy .mzp-c-card-picto-content::before {
     background: url('/media/img/firefox/lockwise/mask.svg') no-repeat;
 }
+
+.mzp-c-card-picto .mzp-c-card-picto-title {
+    font-weight: normal;
+    font-size: 18px;
+}
+
 .mzp-c-card-picto{
     list-style: none;
 }
+
 .mzp-c-hero-desc {
     margin-bottom: $spacing-lg;
 }
-.mzp-c-hero-image {
-    padding-top: $spacing-lg;
-}
-.mzp-c-hero-title {
-    background: url('/media/protocol/img/logos/firefox/lockwise/logo-word-hor-2xl-high-res.png') no-repeat;
-    @include background-size(250px);
-    padding-top: $layout-lg;
+
+h1 {
+    @include at2x('/media/protocol/img/logos/firefox/lockwise/logo-word-hor-2xl.png', auto, 100%);
+    background-position: center;
+    @include image-replaced;
+    background-repeat: no-repeat;
+    margin-bottom: $spacing-md;
 }
 
 @media #{$mq-sm} {
@@ -62,7 +77,15 @@ $image-path: '/media/protocol/img';
     }
 }
 
+@media #{$mq-md} {
+    h1 {
+        @include at2x('/media/protocol/img/logos/firefox/lockwise/logo-word-hor-2xl.png', auto, 48px);
+        @include bidi(((background-position, top left, top right),));
+    }
+}
+
 @media #{$mq-lg} {
+
     .mzp-c-hero-image img {
         margin: 0 $layout-lg;
     }

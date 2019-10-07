@@ -18,6 +18,9 @@ $image-path: '/media/protocol/img';
     text-align: center;
 }
 
+.hidden {
+    display: none;
+}
 .mzp-t-dark {
     background-color: $color-off-black;
 }

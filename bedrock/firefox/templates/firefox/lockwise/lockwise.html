@@ -54,19 +54,19 @@
         </a>
         {{ google_play_button(href=lockwise_adjust_url('android', 'lockwise-page'), extra_data_attributes={'download-location': button_location, 'cta-type': 'lockwise-app-store', 'cta-text': 'google-play-store', 'cta-position': 'primary' } ) }}
       </div>
-      <div class="mzp-c-hero-cta add-on-download for-firefox-69-and-below" >
+      <div class="mzp-c-hero-cta add-on-download for-firefox-69-and-below hidden" >
         <div class="mzp-c-button-download-container">
           <p>{{ _('Try Lockwise now') }}</p>
           <a href="https://github.com/mozilla-lockwise/lockwise-addon/releases/download/2.2.5-alpha/lockwise-signed.xpi" class="mzp-c-button mzp-t-product" data-cta-type="lockwise-install" data-cta-position="primary">{{ _('Install for Firefox') }}</a>
         </div>
       </div>
-      <div class="mzp-c-hero-cta add-on-download for-firefox-70-and-above" >
+      <div class="mzp-c-hero-cta add-on-download for-firefox-70-and-above hidden" >
         <div class="mzp-c-button-download-container">
           <p >{{ _('Try Lockwise now') }}</p>
           <button class="mzp-c-button mzp-t-product" id="lockwise-button" data-cta-type="lockwise-open-in-fx" data-cta-position="primary">{{ _('Open in Firefox') }} </button>
         </div>
       </div>
-      <div class="mzp-c-hero-cta add-on-download for-non-firefox-users" >
+      <div class="mzp-c-hero-cta add-on-download for-non-firefox-users hidden" >
         <div class="mzp-c-button-download-container">
           <p >{{ _('Only in the Firefox Browser') }}</p>
           {{ download_firefox(alt_copy=_('Download now'), download_location='primary cta') }}

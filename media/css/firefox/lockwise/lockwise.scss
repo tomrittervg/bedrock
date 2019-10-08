@@ -43,14 +43,17 @@ $image-path: '/media/protocol/img';
 
 .encryption .mzp-c-card-picto-content::before {
     background: url('/media/img/firefox/lockwise/arrows.svg') no-repeat;
+    background-position: center;
 }
 
 .touch .mzp-c-card-picto-content::before {
     background: url('/media/img/firefox/lockwise/fingerprinters.svg') no-repeat;
+    background-position: center;
 }
 
 .privacy .mzp-c-card-picto-content::before {
     background: url('/media/img/firefox/lockwise/mask.svg') no-repeat;
+    background-position: center;
 }
 
 .mzp-c-card-picto .mzp-c-card-picto-title {
@@ -67,11 +70,15 @@ $image-path: '/media/protocol/img';
 }
 
 h1 {
-    @include at2x('/media/protocol/img/logos/firefox/lockwise/logo-word-hor-2xl.png', auto, 100%);
+    @include at2x('/media/protocol/img/logos/firefox/lockwise/logo-word-hor-sm.png', auto, 100%);
     background-position: center;
     @include image-replaced;
     background-repeat: no-repeat;
     margin-bottom: $spacing-md;
+}
+
+.hero-subheading {
+    font-size: 36px;
 }
 
 @media #{$mq-sm} {
@@ -82,8 +89,8 @@ h1 {
 
 @media #{$mq-md} {
     h1 {
-        @include at2x('/media/protocol/img/logos/firefox/lockwise/logo-word-hor-2xl.png', auto, 48px);
         @include bidi(((background-position, top left, top right),));
+        @include background-size(auto 48px);
     }
 }
 

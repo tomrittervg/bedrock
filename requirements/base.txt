@@ -340,8 +340,9 @@ PySocks==1.6.8 \
 urllib3==1.24.1 \
     --hash=sha256:61bf29cada3fc2fbefad4fdf059ea4bd1b4a86d2b6d15e1c7c0b582b9752fe39 \
     --hash=sha256:de9529817c93f27c8ccbfead6985011db27bd0ddfcdb2d86f3f663385c6a9c22
-https://github.com/Pike/python-fluent/archive/a2a268e4ba57c9c645df1fbdb48edbf7bf6812d1.tar.gz#egg=fluent.runtime&subdirectory=fluent.runtime \
-    --hash=sha256:4c7beb247a09affcdcbc9d14fd1a2df1891cdbd1601667278e5e756f59f4ed36
+fluent.runtime==0.3 \
+    --hash=sha256:8d41d4bf4cb19039370e14de78f2991cae9721d44e66165989a69ff5c22d90f0 \
+    --hash=sha256:d8a81a36d111ba3e66af27f9224e94ef305cf3bec407c3f98a7c597eef554652
 fluent.syntax==0.17.0 \
     --hash=sha256:ac3db2f77d62b032fdf1f17ef5c390b7801a9e9fb58d41eca3825c0d47b88d79 \
     --hash=sha256:e26be470aeebe4badd84f7bb0b648414e0f2ef95d26e5336d634af99e402ea61

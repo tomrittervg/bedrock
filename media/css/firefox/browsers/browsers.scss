@@ -1,0 +1,278 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+$font-path: '/media/fonts';
+$image-path: '/media/protocol/img';
+
+@import '../../protocol/components/state-fxa';
+@import '../../../protocol/css/includes/lib';
+@import '../../../protocol/css/components/emphasis-box';
+@import '../../../protocol/css/components/feature-card';
+@import '../../../protocol/css/components/menu-list';
+
+
+//* -------------------------------------------------------------------------- */
+// Protocol over-rides for the whole page
+
+.mzp-t-dark {
+    @include light-links;
+    color: $color-white;
+}
+
+.mzp-c-menu-list {
+    // match the bottom margin of <p>
+    margin-bottom: 1.25em;
+}
+
+.mzp-c-menu-list-title {
+    margin-bottom: 0;
+}
+
+// vertical spacing
+main .mzp-l-content {
+    padding-bottom: $layout-md;
+    padding-top: $layout-md;
+
+    @media #{$mq-md} {
+        padding-top: $layout-lg;
+        padding-bottom: $layout-lg;
+    }
+}
+
+// https://github.com/mozilla/protocol/issues/511
+.t-zap {
+    strong {
+       position: relative;
+
+       &:after {
+           background-image: url('/media/img/firefox/home/master/zap-privacy.svg');
+           background-repeat: no-repeat;
+           background-size: 100% 100%;
+           content: '';
+           display: block;
+           height: 0.3em;
+           left: -0.2em;
+           position: absolute;
+           top: calc(100% - 0.15em);
+           width: calc(100% + 0.4em);
+       }
+   }
+}
+
+
+//* -------------------------------------------------------------------------- */
+
+.c-intro {
+    text-align: center;
+
+    h1 {
+        @include text-display-xl;
+    }
+
+    p {
+        @include text-body-lg;
+        margin-bottom: 0;
+    }
+}
+
+//* -------------------------------------------------------------------------- */
+
+.c-landing-grid {
+    > div {
+        margin-bottom: $layout-md * 2; // vertical spacing
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 400px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &.c-landing-grid-wide {
+            max-width: 100%;
+        }
+
+        > p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    img {
+        display: block;
+        margin: 0 auto;
+        max-width: $content-xs;
+    }
+
+    // two column grid for browsers that don't support display:grid
+    // works in RTL without bidi styles \o/
+    @media #{$mq-md} {
+        > div {
+            float:left;
+            margin-bottom: $layout-lg * 2; // vertical spacing
+            margin-left: $layout-md;
+            max-width: 100%;
+            width: calc(50% - #{$layout-md / 2}) ;
+
+            &:nth-child(odd) {
+                clear: left;
+                margin-left: 0;
+            }
+
+            &.c-landing-grid-wide {
+                width: 100%;
+            }
+        }
+    }
+
+    // two and then three column grid for browsers that do support grid
+    @supports (display:grid) {
+        @media #{$mq-md} {
+            @include grid-column-gap($layout-md);
+            @include grid-row-gap($layout-md);
+            display:grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr) );
+
+            &:after {
+                // need to remove :after added by .mzp-l-content or we get an extra grid row
+                // it's okay, we don't need to clear when using grid
+                content: none;
+            }
+
+            > div {
+                width: auto; // over-ride float
+                margin-left: 0;
+                margin-bottom: 0; // vertical spacing now set as row-gap instead of margin
+            }
+
+            img {
+                max-width: 100%;
+            }
+
+            .c-landing-grid-wide {
+                grid-column: span 2;
+            }
+        }
+
+        @media #{$mq-lg} {
+            @include grid-row-gap(#{$layout-lg * 2});
+            grid-template-columns: repeat(3, minmax(0, 1fr) );
+        }
+    }
+}
+
+.c-landing-grid-title {
+    @include text-display-xs;
+    margin-top: $spacing-xl;
+    margin-bottom: $spacing-md;
+
+    + p {
+        margin-bottom: $spacing-xl;
+    }
+}
+
+//* -------------------------------------------------------------------------- */
+
+.t-dev {
+    background-color: $color-gray-20;
+    padding: $layout-md;
+
+    .mzp-c-card-feature-title {
+        @include visually-hidden;
+    }
+
+    .mzp-c-card-feature {
+        margin-bottom: 0;
+    }
+}
+
+.c-dev-title {
+    @include text-display-sm;
+    @include font-firefox;
+    font-weight: bold;
+}
+
+//* -------------------------------------------------------------------------- */
+
+.t-account {
+    background: linear-gradient($color-violet-50 -100%, $color-off-black);
+    margin: 0 0 $layout-md 0;
+
+    @media #{$mq-md} {
+        margin-bottom: $layout-lg;
+    }
+
+    @media #{$mq-lg} {
+        padding-right: 33%;
+    }
+}
+
+.fxa-form-cta {
+    @include text-body-xs;
+}
+
+.fxa-email-form-title {
+    @include font-size(24px);
+    margin-bottom: $spacing-xl;
+}
+
+.fxa-email-form-intro {
+    display: none;
+}
+
+.fxa-email-field-container {
+    .field {
+        label {
+            @include text-body-sm;
+        }
+
+        input[type="email"] {
+            box-shadow: none;
+            padding: 12px 16px;
+            width: 100%;
+        }
+    }
+
+    .mzp-c-button {
+        width: 100%;
+    }
+
+    @media #{$mq-md} {
+        @supports(display:grid) {
+            @include grid-column-gap($spacing-lg);
+            display:grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: auto auto auto;
+
+            .field {
+                grid-column-start: 1;
+                grid-row-start: 1;
+                grid-row-end: 3;
+                margin-bottom: 0;
+
+                label {
+                    margin-bottom: $spacing-sm;
+                }
+            }
+
+            .agreement {
+                grid-column-start: 1;
+                grid-row-start: 3;
+                grid-row-end: 4;
+                margin-top: $spacing-sm;
+                margin-bottom: 0;
+            }
+
+            .mzp-c-button {
+                grid-column-start: 2;
+                grid-row-start: 2;
+                grid-row-end: 3;
+            }
+        }
+    }
+}
+
+.fxa-signin {
+    margin-top: $spacing-xl;
+    margin-bottom: 0;
+}

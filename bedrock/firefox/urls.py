@@ -28,6 +28,7 @@ urlpatterns = (
     url(r'^firefox/$', views.firefox_home, name='firefox'),
     url(r'^firefox/all/$', views.firefox_all, name='firefox.all'),
     url(r'^firefox/accounts/$', views.firefox_accounts, name='firefox.accounts'),
+    page('firefox/browsers', 'firefox/browsers/index.html'),
     url(r'^firefox/campaign/$', views.campaign, name='firefox.campaign'),
     page('firefox/channel/desktop', 'firefox/channel/desktop.html'),
     page('firefox/channel/android', 'firefox/channel/android.html'),

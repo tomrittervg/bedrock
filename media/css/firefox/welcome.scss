@@ -205,6 +205,25 @@ $image-path: '/media/protocol/img';
 //* -------------------------------------------------------------------------- */
 //  Modal
 
+.no-js .welcome-page4 {
+    .js-modal-link {
+        display: none;
+    }
+
+    .mzp-u-modal-content {
+        margin: $spacing-md;
+        text-align: center;
+
+        h3 {
+            @include text-display-sm;
+        }
+
+        .modal-logo {
+            margin-top: $spacing-xl;
+        }
+    }
+}
+
 .modal-logo {
     @include at2x('/media/protocol/img/logos/firefox/browser/logo-lg.png', auto, 100%);
     @include image-replaced;
@@ -234,11 +253,15 @@ $image-path: '/media/protocol/img';
         color: $color-black;
         padding: $layout-xs;
         text-align: center;
+
+        a {
+            color: $color-link;
+        }
     }
 
     .qr-code-wrapper {
         margin: 0 auto;
-        width: $content-sm;
+        width: $content-xs;
     }
 
 }

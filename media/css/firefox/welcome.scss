@@ -106,7 +106,7 @@ $image-path: '/media/protocol/img';
     }
 
     .primary-image-desc {
-        @include text-body-sm;
+        @include text-display-xxs;
         font-style: italic;
         margin: $layout-sm 0 $layout-xl 0;
     }

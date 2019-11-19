@@ -26,7 +26,7 @@
 
   <div class="mzp-l-content c-landing-grid">
     <div>
-      <img src="{{ static('img/firefox/home/master/browsers.jpg') }}">
+      {{ high_res_img('img/firefox/browsers/desktop.jpg', {'alt': '', 'width': '327', 'height': '223'}) }}
       <h2 class="c-landing-grid-title ">{{ _('Desktop') }}</h2>
       <p>{{ _('2000+ trackers off your trail — including Facebook') }}</p>
       <p>
@@ -40,7 +40,7 @@
       <p><a class="mzp-c-cta-link" href="#TKTK">{{ _('Learn more') }}</a></p>
     </div>
     <div>
-      <img src="{{ static('img/firefox/home/master/browsers.jpg') }}">
+      {{ high_res_img('img/firefox/browsers/mobile.jpg', {'alt': '', 'width': '327', 'height': '223'}) }}
       <h2 class="c-landing-grid-title ">{{ _('Mobile') }}</h2>
       <p>{{ _('Take your passwords, preferences — and even your tabs — with you') }}</p>
       <div class="mzp-c-menu-list mzp-t-cta mzp-t-download">
@@ -53,7 +53,7 @@
       <p><a class="mzp-c-cta-link" href="#TKTK">{{ _('Learn more') }}</a></p>
     </div>
     <div>
-      <img src="{{ static('img/firefox/home/master/browsers.jpg') }}">
+      {{ high_res_img('img/firefox/browsers/enterprise.jpg', {'alt': '', 'width': '327', 'height': '223'}) }}
       <h2 class="c-landing-grid-title ">{{ _('Enterprise') }}</h2>
       <p>{{ _('Protect your company’s data — and choose the release cadence that works') }}</p>
       <p>
@@ -62,7 +62,7 @@
       <p><a class="mzp-c-cta-link" href="#TKTK">{{ _('Learn more') }}</a></p>
     </div>
     <div>
-      <img src="{{ static('img/firefox/home/master/browsers.jpg') }}">
+      {{ high_res_img('img/firefox/browsers/reality.jpg', {'alt': '', 'width': '327', 'height': '223'}) }}
       <h2 class="c-landing-grid-title ">{{ _('Reality') }}</h2>
       <p>{{ _('Strap on your goggles and step into the immersive web') }}</p>
       <p><a class="mzp-c-cta-link" href="#TKTK">{{ _('Learn more') }}</a></p>
@@ -72,7 +72,8 @@
         {% call feature_card(
           title='Developer Edition',
           heading_level=2,
-          image_url='img/firefox/home/master/spacer.gif',
+          image_url='img/firefox/browsers/dev.png',
+          include_highres_image=True,
           class='mzp-l-card-feature-left-half',
           link_url=url('firefox.developer.index'),
           link_cta=learn_more,
@@ -86,7 +87,7 @@
   </div>
 
   <div class="mzp-l-content is-js-dependent">
-    <div class="mzp-c-box-emphasis mzp-t-dark t-account">
+    <div class="mzp-c-emphasis-box mzp-t-dark t-account">
       <div class="fxa-form-cta">
         {{ fxa_email_form(
           entrypoint=_entrypoint,

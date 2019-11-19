@@ -130,7 +130,7 @@ main .mzp-l-content {
         @media #{$mq-md} {
             @include grid-column-gap($layout-md);
             @include grid-row-gap($layout-md);
-            display:grid;
+            display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr) );
 
             &:after {

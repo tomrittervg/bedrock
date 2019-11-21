@@ -20,13 +20,13 @@
 {% block content %}
 <main role="main">
   <div class="mzp-l-content c-intro">
-    <h1 class="t-zap">{{ _('Get the <strong>browsers</strong> that put your privacy first — and always have') }}</h1>
+    <h1 class="mzp-has-zap-11">{{ _('Get the <strong>browsers</strong> that put your privacy first — and always have') }}</h1>
     <p>{{ _('Industry-leading privacy protection comes standard with every browser we make — and so does your right to remain anonymous.') }}</p>
   </div>
 
   <div class="mzp-l-content c-landing-grid">
-    <div>
-      {{ high_res_img('img/firefox/browsers/desktop.jpg', {'alt': '', 'width': '327', 'height': '223'}) }}
+    <div class="c-landing-grid-item">
+      {{ high_res_img('img/firefox/browsers/desktop.jpg', {'alt': '', 'class': 'c-landing-grid-img', 'width': '327', 'height': '223'}) }}
       <h2 class="c-landing-grid-title ">{{ _('Desktop') }}</h2>
       <p>{{ _('2000+ trackers off your trail — including Facebook') }}</p>
       <p>
@@ -34,13 +34,12 @@
         <a href="{{ url('firefox.new') }}" data-link-type="Desktop" data-download-os="Desktop" data-download-version="standard">{{ _('Download') }}</a>
       <![endif]-->
       <!--[if !IE]><!-->
-        <a class="mzp-c-cta-link" href="{{ url('firefox.download.thanks') }}" data-link-type="Desktop" data-download-os="Desktop" data-download-version="standard">{{ _('Download') }} ⬇️</a>
+        <a class="mzp-c-cta-link t-download" href="{{ url('firefox.download.thanks') }}" data-link-type="Desktop" data-download-os="Desktop" data-download-version="standard">{{ _('Download') }}</a>
       <!--<![endif]-->
       </p>
-      <p><a class="mzp-c-cta-link" href="#TKTK">{{ _('Learn more') }}</a></p>
     </div>
-    <div>
-      {{ high_res_img('img/firefox/browsers/mobile.jpg', {'alt': '', 'width': '327', 'height': '223'}) }}
+    <div class="c-landing-grid-item">
+      {{ high_res_img('img/firefox/browsers/mobile.jpg', {'alt': '', 'class': 'c-landing-grid-img', 'width': '327', 'height': '223'}) }}
       <h2 class="c-landing-grid-title ">{{ _('Mobile') }}</h2>
       <p>{{ _('Take your passwords, preferences — and even your tabs — with you') }}</p>
       <div class="mzp-c-menu-list mzp-t-cta mzp-t-download">
@@ -52,8 +51,8 @@
       </div>
       <p><a class="mzp-c-cta-link" href="#TKTK">{{ _('Learn more') }}</a></p>
     </div>
-    <div>
-      {{ high_res_img('img/firefox/browsers/enterprise.jpg', {'alt': '', 'width': '327', 'height': '223'}) }}
+    <div class="c-landing-grid-item">
+      {{ high_res_img('img/firefox/browsers/enterprise.jpg', {'alt': '', 'class': 'c-landing-grid-img', 'width': '327', 'height': '223'}) }}
       <h2 class="c-landing-grid-title ">{{ _('Enterprise') }}</h2>
       <p>{{ _('Protect your company’s data — and choose the release cadence that works') }}</p>
       <p>
@@ -61,13 +60,13 @@
       </p>
       <p><a class="mzp-c-cta-link" href="#TKTK">{{ _('Learn more') }}</a></p>
     </div>
-    <div>
-      {{ high_res_img('img/firefox/browsers/reality.jpg', {'alt': '', 'width': '327', 'height': '223'}) }}
+    <div class="c-landing-grid-item">
+      {{ high_res_img('img/firefox/browsers/reality.jpg', {'alt': '', 'class': 'c-landing-grid-img', 'width': '327', 'height': '223'}) }}
       <h2 class="c-landing-grid-title ">{{ _('Reality') }}</h2>
       <p>{{ _('Strap on your goggles and step into the immersive web') }}</p>
-      <p><a class="mzp-c-cta-link" href="#TKTK">{{ _('Learn more') }}</a></p>
+      <p><a class="mzp-c-cta-link" href="https://mixedreality.mozilla.org/firefox-reality">{{ _('Get Firefox Reality') }}</a></p>
     </div>
-    <div class="c-landing-grid-wide">
+    <div class="c-landing-grid-item c-landing-grid-wide">
       <div class="t-dev">
         {% call feature_card(
           title='Developer Edition',
@@ -79,8 +78,8 @@
           link_cta=learn_more,
           ga_title='Developer'
         ) %}
-        <p class="c-dev-title t-zap">{{ _('Build sites and refine your code with Firefox <strong>DevTools</strong>') }}</p>
-        <p><a class="mzp-c-cta-link" href="#TKTK">{{ _('Learn more') }}</a></p>
+        <p class="c-dev-title mzp-has-zap-16">{{ _('Build sites and refine your code with Firefox <strong>DevTools</strong>') }}</p>
+        <p><a class="mzp-c-cta-link" href="#TKTK">{{ _('Learn more about DevTools') }}</a></p>
         {% endcall %}
       </div>
     </div>

@@ -1267,7 +1267,7 @@
         "js/base/mozilla-fxa-form.js",
         "js/base/mozilla-fxa-form-init.js",
         "js/base/mozilla-fxa-sign-in-link.js",
-        "js/firefox/home/master.js"
+        "js/firefox/browsers.js"
       ],
       "name": "firefox-browsers"
     },

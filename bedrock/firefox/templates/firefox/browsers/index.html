@@ -5,8 +5,8 @@
 {% add_lang_files "firefox/browsers" %}
 
 {% extends "firefox/base/base-protocol.html" %}
-{% from "macros.html" import fxa_email_form, fxa_link_fragment with context %}
-{% from "macros-protocol.html" import feature_card with context %}
+{% from "macros.html" import google_play_button, fxa_email_form, fxa_link_fragment with context %}
+{% from "macros-protocol.html" import hero, feature_card with context %}
 
 {% block page_title %}{{ _('Firefox - Protect your life online with privacy-first products') }}{% endblock %}
 {% block page_desc %}{{ _('Firefox is more than a browser. Learn more about Firefox products that handle your data with respect and are built for privacy anywhere you go online.') }}{% endblock %}
@@ -15,56 +15,65 @@
   {{ css_bundle('firefox-browsers') }}
 {% endblock %}
 
+{% set android_url = firefox_adjust_url('android', 'browsers-page') %}
+{% set ios_url = firefox_adjust_url('ios', 'browsers-page') %}
+{% set referrals = '?utm_source=www.mozilla.org&utm_medium=referral&utm_campaign=firefox-browsers' %}
 {% set _entrypoint = 'mozilla.org-firefox-browsers' %}
 
 {% block content %}
 <main role="main">
-  <div class="mzp-l-content c-intro">
-    <h1 class="mzp-has-zap-11">{{ _('Get the <strong>browsers</strong> that put your privacy first — and always have') }}</h1>
-    <p>{{ _('Industry-leading privacy protection comes standard with every browser we make — and so does your right to remain anonymous.') }}</p>
-  </div>
+
+  {% call hero(
+    title='Get the <strong>browsers</strong> that put your privacy first — and always have'|safe,
+    desc='Get the privacy you deserve. Enhanced Tracking Protection is automatic in every Firefox browser.',
+    image_url='img/firefox/browsers/hero.jpg',
+    heading_level=1,
+    class='mzp-has-zap-11'
+  ) %}
+  {% endcall %}
 
   <div class="mzp-l-content c-landing-grid">
     <div class="c-landing-grid-item">
       {{ high_res_img('img/firefox/browsers/desktop.jpg', {'alt': '', 'class': 'c-landing-grid-img', 'width': '327', 'height': '223'}) }}
-      <h2 class="c-landing-grid-title ">{{ _('Desktop') }}</h2>
-      <p>{{ _('2000+ trackers off your trail — including Facebook') }}</p>
-      <p>
-      <!--[if IE]>
-        <a href="{{ url('firefox.new') }}" data-link-type="Desktop" data-download-os="Desktop" data-download-version="standard">{{ _('Download') }}</a>
-      <![endif]-->
-      <!--[if !IE]><!-->
-        <a class="mzp-c-cta-link t-download" href="{{ url('firefox.download.thanks') }}" data-link-type="Desktop" data-download-os="Desktop" data-download-version="standard">{{ _('Download') }}</a>
-      <!--<![endif]-->
-      </p>
+      <h2 class="c-landing-grid-title"><a href="{{ url('firefox.new') }}">{{ _('Desktop') }}</a></h2>
+      <p>{{ _('Seriously private browsing. Firefox automatically blocks 2000+ online trackers from collecting information about what you do online.') }}</p>
+      {{ download_firefox(dom_id='card-desktop-download', button_color='mzp-t-small', alt_copy=_('Download'), download_location='card') }}
+      <p><a class="mzp-c-cta-link" href="{{ url('firefox.new') }}">{{ _('Learn more') }}</a></p>
     </div>
     <div class="c-landing-grid-item">
       {{ high_res_img('img/firefox/browsers/mobile.jpg', {'alt': '', 'class': 'c-landing-grid-img', 'width': '327', 'height': '223'}) }}
-      <h2 class="c-landing-grid-title ">{{ _('Mobile') }}</h2>
-      <p>{{ _('Take your passwords, preferences — and even your tabs — with you') }}</p>
-      <div class="mzp-c-menu-list mzp-t-cta mzp-t-download">
-        <h5 class="mzp-c-menu-list-title">{{ _('Download') }}</h5>
+      <h2 class="c-landing-grid-title "><a class="mzp-c-cta-link" href="{{ url('firefox.mobile') }}">{{ _('Mobile') }}</a></h2>
+      <p>{{ _('Take the same level of privacy — plus your passwords, search history, open tabs and more — with you wherever you go.') }}</p>
+
+      <div class="appstore-android">
+        {{ google_play_button(href=android_url, id='playStoreLink') }}
+      </div>
+      <div class="appstore-ios">
+        <a id="appStoreLink" href="{{ ios_url }}" data-link-type="download" data-download-os="iOS">
+          <img src="{{ l10n_img('firefox/ios/btn-app-store.svg') }}" alt="{{ _('Download on the App Store') }}" width="152" height="45">
+        </a>
+      </div>
+      <div id="menu-mobile-wrapper"  class="mzp-c-menu-list mzp-t-cta mzp-t-download">
+        <h3 class="mzp-c-menu-list-title">{{ _('Download') }}</h3>
         <ul class="mzp-c-menu-list-list" id="menu-mobile">
           <li class="mzp-c-menu-list-item"><a href="{{ firefox_adjust_url('android', 'firefox_browsers') }}" rel="external noopener" data-link-type="download" data-display-name="Android" data-download-version="android" data-download-os="Android">Android</a></li>
           <li class="mzp-c-menu-list-item"><a href="{{ firefox_adjust_url('ios', 'firefox_browsers') }}" rel="external noopener" data-link-type="download" data-display-name="iOS" data-download-version="ios" data-download-os="iOS">iOS</a></li>
+          <!-- TODO <li class="mzp-c-menu-list-item"><button>Email me a link</button></li> -->
         </ul>
       </div>
-      <p><a class="mzp-c-cta-link" href="#TKTK">{{ _('Learn more') }}</a></p>
+      <p><a class="mzp-c-cta-link" href="{{ url('firefox.mobile') }}">{{ _('Learn more') }}</a></p>
     </div>
     <div class="c-landing-grid-item">
       {{ high_res_img('img/firefox/browsers/enterprise.jpg', {'alt': '', 'class': 'c-landing-grid-img', 'width': '327', 'height': '223'}) }}
-      <h2 class="c-landing-grid-title ">{{ _('Enterprise') }}</h2>
-      <p>{{ _('Protect your company’s data — and choose the release cadence that works') }}</p>
-      <p>
-        <a class="mzp-c-cta-link" href="#TKTK">{{ _('Contact sales') }}</a>
-      </p>
-      <p><a class="mzp-c-cta-link" href="#TKTK">{{ _('Learn more') }}</a></p>
+      <h2 class="c-landing-grid-title"><a href="{{ url('firefox.enterprise.index') }}">{{ _('Enterprise') }}</a></h2>
+      <p>{{ _('Get unmatched data protection with support cycles tailored to suit your company’s needs.') }}</p>
+      <p><a class="mzp-c-cta-link" href="{{ url('firefox.enterprise.index') }}">{{ _('Learn more') }}</a></p>
     </div>
     <div class="c-landing-grid-item">
       {{ high_res_img('img/firefox/browsers/reality.jpg', {'alt': '', 'class': 'c-landing-grid-img', 'width': '327', 'height': '223'}) }}
-      <h2 class="c-landing-grid-title ">{{ _('Reality') }}</h2>
-      <p>{{ _('Strap on your goggles and step into the immersive web') }}</p>
-      <p><a class="mzp-c-cta-link" href="https://mixedreality.mozilla.org/firefox-reality">{{ _('Get Firefox Reality') }}</a></p>
+      <h2 class="c-landing-grid-title"><a href="https://mixedreality.mozilla.org/firefox-reality{{ referrals }}">{{ _('Reality') }}</a></h2>
+      <p>{{ _('Go beyond two dimensions and enjoy the best immersive content from around the web.') }}</p>
+      <p><a class="mzp-c-cta-link" href="https://mixedreality.mozilla.org/firefox-reality{{ referrals }}">{{ _('Get Firefox Reality') }}</a></p>
     </div>
     <div class="c-landing-grid-item c-landing-grid-wide">
       <div class="t-dev">
@@ -79,7 +88,7 @@
           ga_title='Developer'
         ) %}
         <p class="c-dev-title mzp-has-zap-16">{{ _('Build sites and refine your code with Firefox <strong>DevTools</strong>') }}</p>
-        <p><a class="mzp-c-cta-link" href="#TKTK">{{ _('Learn more about DevTools') }}</a></p>
+        <p><a class="mzp-c-cta-link" href="{{ url('firefox.developer.index') }}">{{ _('Learn more about DevTools') }}</a></p>
         {% endcall %}
       </div>
     </div>

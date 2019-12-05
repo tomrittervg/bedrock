@@ -9,6 +9,7 @@ $image-path: '/media/protocol/img';
 @import '../../../protocol/css/includes/lib';
 @import '../../../protocol/css/components/emphasis-box';
 @import '../../../protocol/css/components/feature-card';
+@import '../../../protocol/css/components/hero';
 @import '../../../protocol/css/components/menu-list';
 @import '../../../protocol/css/components/zap';
 
@@ -19,6 +20,25 @@ $image-path: '/media/protocol/img';
 .mzp-t-dark {
     @include light-links;
     color: $color-white;
+}
+
+.mzp-c-hero {
+    padding: 0;
+}
+
+.mzp-c-hero-desc {
+    &,
+    & p {
+        margin-bottom: 0;
+    }
+}
+
+.mzp-c-hero-image {
+    display: none;
+
+    @media #{$mq-md} {
+        display: block;
+    }
 }
 
 .mzp-c-menu-list {
@@ -38,18 +58,6 @@ main .mzp-l-content {
     @media #{$mq-md} {
         padding-top: $layout-lg;
         padding-bottom: $layout-lg;
-    }
-}
-
-.mzp-c-cta-link.t-download {
-    &:after {
-        content: '';
-        background-image: $url-image-download-link-hover;
-        background-size: 24px;
-        display: inline-block;
-        height: 20px;
-        width: 20px;
-        margin-bottom: -4px;
     }
 }
 
@@ -93,6 +101,16 @@ main .mzp-l-content {
     @include text-display-xs;
     margin-top: $spacing-xl;
     margin-bottom: $spacing-md;
+
+    a {
+        color: $color-off-black;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
 
     + p {
         margin-bottom: $spacing-xl;
@@ -171,12 +189,56 @@ main .mzp-l-content {
     }
 }
 
+//* -------------------------------------------------------------------------- */
+
+#card-desktop-download {
+    margin: 0 0 1.25em 0;
+
+    .mzp-t-small {
+        padding: $spacing-xs $spacing-md;
+    }
+
+    & .download-list {
+        margin: 0;
+    }
+
+    & .fx-privacy-link {
+        display: none;
+    }
+}
+
+// app store links when user visits in apprpriate OS
+.appstore-android,
+.appstore-ios {
+    display: none;
+    margin-bottom: 1.25em;
+
+    img {
+        display: block;
+    }
+}
+
+.android .appstore-android {
+    display: block;
+}
+
+.ios .appstore-ios {
+    display: block;
+}
+
+.ios,
+.android {
+    #menu-mobile-wrapper {
+        display: none;
+    }
+}
 
 //* -------------------------------------------------------------------------- */
 
 .t-dev {
     background-color: $color-gray-20;
     padding: $layout-md;
+    margin-top: $layout-md + $layout-2xl;
 
     .mzp-c-card-feature-title {
         @include visually-hidden;
@@ -185,12 +247,35 @@ main .mzp-l-content {
     .mzp-c-card-feature {
         margin-bottom: 0;
     }
+
+    .mzp-c-card-feature-media {
+        margin-top: $layout-2xl * -1;
+    }
 }
 
 .c-dev-title {
     @include text-display-sm;
     @include font-firefox;
     font-weight: bold;
+}
+
+@media #{$mq-sm} {
+    .t-dev {
+        max-width: $content-xs;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media #{$mq-md} {
+    .t-dev {
+        margin-top: 0;
+        max-width: 100%;
+
+        .mzp-c-card-feature-media {
+            margin-top: 0;
+        }
+    }
 }
 
 //* -------------------------------------------------------------------------- */
@@ -204,6 +289,10 @@ main .mzp-l-content {
     }
 
     @media #{$mq-lg} {
+        background: url('/media/img/firefox/browsers/fxa.svg'), linear-gradient($color-violet-50 -100%, $color-off-black);
+        background-repeat: no-repeat;
+        background-position: center right $layout-sm, top left;
+        background-size: calc(33% - #{$layout-sm + $layout-lg}) auto, auto;
         padding-right: 33%;
     }
 }

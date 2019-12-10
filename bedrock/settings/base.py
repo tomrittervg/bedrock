@@ -1458,6 +1458,7 @@ CSP_SCRIPT_SRC = CSP_DEFAULT_SRC + [
     'data.track.convertexperiments.com',
     '1003350.track.convertexperiments.com',
     '1003343.track.convertexperiments.com',
+    'cdn.jsdelivr.net/npm/vue/dist/vue.js',
 ]
 CSP_STYLE_SRC = CSP_DEFAULT_SRC + [
     # TODO fix things so that we don't need this

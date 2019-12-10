@@ -317,6 +317,12 @@
     },
     {
       "files": [
+        "css/firefox/vue.scss"
+      ],
+      "name": "vue"
+    },
+    {
+      "files": [
         "css/mozorg/about-transparency.scss"
       ],
       "name": "about-transparency"
@@ -1575,6 +1581,12 @@
         "js/firefox/enterprise/sla.js"
       ],
       "name": "firefox-enterprise-sla"
+    },
+    {
+      "files": [
+        "js/firefox/vue.js"
+      ],
+      "name": "vue"
     }
   ]
 }

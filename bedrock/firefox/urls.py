@@ -135,4 +135,7 @@ urlpatterns = (
     # Issue 7765, 7709
     page('firefox/privacy', 'firefox/privacy/index.html'),
     page('firefox/privacy/products', 'firefox/privacy/products.html'),
+
+    # Vue.js experiment
+    page('firefox/vue', 'firefox/vue.html'),
 )
